@@ -9,20 +9,18 @@ function bgColor(isOnline) {
 }
 
 export const FriendListItem = ({ avatar, name, isOnline }) => {
-  {
-    const status = {
-      backgroundColor: bgColor(isOnline),
-    };
-    return (
-      <li className={css.item}>
-        <span className={css.status} style={status}>
-          {isOnline}
-        </span>
-        <img src={avatar} alt="User avatar" className={css.avatar} width="48" />
-        <p className={css.name}>{name}</p>
-      </li>
-    );
-  }
+  const status = {
+    backgroundColor: bgColor(isOnline),
+  };
+  return (
+    <li className={css.item}>
+      <span className={css.status} style={status}>
+        {isOnline}
+      </span>
+      <img src={avatar} alt="User avatar" className={css.avatar} width="48" />
+      <p className={css.name}>{name}</p>
+    </li>
+  );
 };
 
 FriendListItem.propTypes = {
