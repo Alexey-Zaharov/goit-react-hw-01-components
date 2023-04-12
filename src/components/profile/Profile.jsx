@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+// import PropTypes, { arrayOf, objectOf } from 'prop-types';
 import css from './Profile.module.css';
 
 export const UserCard = ({
@@ -39,7 +40,5 @@ UserCard.propTypes = {
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
-  followers: PropTypes.number,
-  views: PropTypes.number,
-  likes: PropTypes.number,
+  stats: PropTypes.objectOf(PropTypes.number),
 };

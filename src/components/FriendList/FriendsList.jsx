@@ -1,33 +1,19 @@
-import PropTypes from 'prop-types';
-import css from '../FriendList/FriendsList.module.css';
+import PropTypes, { arrayOf } from 'prop-types';
+import { FriendListItem } from '../FriendList/FriendListItem';
 
-function bgColor(isOnline) {
-  if (isOnline) {
-    return 'green';
-  }
-  return 'red';
-}
+import css from '../FriendList/FriendsList.module.css';
 
 export const FriendsList = ({ friends }) => {
   return (
     <ul className={css.friendList}>
-      {friends.map(({ id, avatar, name, isOnline }) => {
-        const status = {
-          backgroundColor: bgColor(isOnline),
-        };
+      {friends.map(({ id, name, avatar, isOnline }) => {
         return (
-          <li key={id} className={css.item}>
-            <span className={css.status} style={status}>
-              {isOnline}
-            </span>
-            <img
-              src={avatar}
-              alt="User avatar"
-              className={css.avatar}
-              width="48"
-            />
-            <p className={css.name}>{name}</p>
-          </li>
+          <FriendListItem
+            key={id}
+            avatar={avatar}
+            name={name}
+            isOnline={isOnline}
+          />
         );
       })}
     </ul>
@@ -35,8 +21,12 @@ export const FriendsList = ({ friends }) => {
 };
 
 FriendsList.propTypes = {
-  id: PropTypes.number,
-  name: PropTypes.string,
-  avatar: PropTypes.string,
-  isOnline: PropTypes.bool,
+  transactions: arrayOf(
+    PropTypes.exact({
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+      id: PropTypes.number.isRequired,
+    })
+  ),
 };
