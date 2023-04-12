@@ -1,4 +1,4 @@
-import { UserCard } from './Profile/Profile';
+import { UserCard } from '../components/Profile/Profile';
 import { Statistic } from '../components/Statistics/Statistic';
 import { FriendsList } from '../components/FriendList/FriendsList';
 import { TransactionHistory } from '../components/TransactionHistory/TransactionHistory';
