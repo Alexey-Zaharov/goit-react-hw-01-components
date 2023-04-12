@@ -1,9 +1,9 @@
-import { UserCard } from '../components/Profile/Profile';
+import { UserCard } from '../components/User/Profile';
 import { Statistic } from '../components/Statistics/Statistic';
 import { FriendsList } from '../components/FriendList/FriendsList';
 import { TransactionHistory } from '../components/TransactionHistory/TransactionHistory';
 
-import user from '../components/Profile/user.json';
+import user from '../components/User/user.json';
 import data from '../components/Statistics/data.json';
 import friends from '../components/FriendList/friends.json';
 import transactions from '../components/TransactionHistory/transactions.json';
