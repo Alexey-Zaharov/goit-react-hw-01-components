@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
 import css from '../FriendList/FriendsList.module.css';
 
+function bgColor(isOnline) {
+  if (isOnline) {
+    return 'green';
+  }
+  return 'red';
+}
+
 export const FriendListItem = ({ avatar, name, isOnline }) => {
   {
-    function bgColor(isOnline) {
-      if (isOnline) {
-        return 'green';
-      }
-      return 'red';
-    }
     const status = {
       backgroundColor: bgColor(isOnline),
     };
