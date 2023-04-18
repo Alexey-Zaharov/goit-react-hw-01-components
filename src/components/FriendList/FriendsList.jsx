@@ -20,7 +20,7 @@ export const FriendsList = ({ friends }) => {
 };
 
 FriendsList.propTypes = {
-  transactions: arrayOf(
+  friends: arrayOf(
     PropTypes.exact({
       avatar: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
